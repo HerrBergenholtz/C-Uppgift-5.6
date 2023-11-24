@@ -4,6 +4,8 @@ class Program
 {
     public static void Main()
     {
+        try
+        {
         Console.WriteLine("Skriv in tal som du vill multiplicera som är separerade med \"*\"");
         string[] input = Console.ReadLine().Split("*");
         int[] tal = new int[input.Length];
@@ -20,5 +22,12 @@ class Program
             produkt *= tal[i];
         }
         Console.WriteLine(produkt);
+        }
+
+        catch
+        {
+            Console.WriteLine("Fel input, vänligen pröva igen");
+            Main();
+        }
     }
 }
